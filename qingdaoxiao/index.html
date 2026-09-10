@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青岛小琴-青岛本地生活与文化分享平台</title>
+    <meta name="description" content="青岛小琴专注于青岛本地生活、美食探店、文化历史与旅游攻略的分享平台，带你发现最地道的青岛风情与城市故事。">
+    <meta name="keywords" content="青岛小琴,青岛,青岛生活,青岛美食,青岛旅游,青岛文化,本地探店,海滨城市">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: #f5f7fa;
+            color: #2d3436;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* 顶部导航 */
+        .header {
+            background: linear-gradient(135deg, #0a4d8c, #1a6fb5);
+            color: #fff;
+            padding: 16px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #fff, #dfe9f3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #e3f0ff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 6px 4px;
+            border-bottom: 2px solid transparent;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            color: #fff;
+            border-bottom-color: #ffd166;
+        }
+        /* 主视觉 */
+        .hero {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%230f4c81;stop-opacity:0.9"/><stop offset="100%" style="stop-color:%232a9fd8;stop-opacity:0.7"/></linearGradient></defs><rect width="1200" height="400" fill="url(%23g)"/><circle cx="950" cy="120" r="80" fill="rgba(255,255,255,0.12)"/><circle cx="200" cy="300" r="120" fill="rgba(255,255,255,0.08)"/><path d="M0,280 Q300,200 600,260 T1200,240 V400 H0 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 90px 0 80px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 16px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            letter-spacing: 4px;
+        }
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .btn-hero {
+            display: inline-block;
+            background: #ffd166;
+            color: #1a3a5c;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(0,0,0,0.3);
+            background: #ffc940;
+        }
+        /* 特色板块 */
+        .features {
+            padding: 70px 0 50px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 12px;
+            color: #0a4d8c;
+            font-weight: 700;
+        }
+        .section-sub {
+            text-align: center;
+            color: #636e72;
+            margin-bottom: 48px;
+            font-size: 16px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 36px 24px;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            transition: 0.3s;
+            border-top: 4px solid #1a6fb5;
+        }
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+        }
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #0a4d8c;
+        }
+        .feature-card p {
+            color: #555;
+            font-size: 15px;
+        }
+        /* 内容区域 */
+        .content-section {
+            padding: 50px 0;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .content-card {
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .content-card:hover {
+            box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+        }
+        .card-img {
+            height: 180px;
+            background: linear-gradient(145deg, #2980b9, #6ab0de);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 56px;
+        }
+        .card-img.orange { background: linear-gradient(145deg, #e67e22, #f0a868); }
+        .card-img.green { background: linear-gradient(145deg, #27ae60, #6fcf97); }
+        .card-img.purple { background: linear-gradient(145deg, #8e44ad, #bb8fce); }
+        .card-img.red { background: linear-gradient(145deg, #c0392b, #e67e73); }
+        .card-body {
+            padding: 24px;
+            flex: 1;
+        }
+        .card-body h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .card-body p {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        .tag {
+            display: inline-block;
+            background: #e8f0fe;
+            color: #0a4d8c;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-right: 8px;
+            margin-bottom: 6px;
+        }
+        /* 双栏布局 */
+        .two-col {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            padding: 50px 0;
+        }
+        .article-panel {
+            background: #fff;
+            border-radius: 14px;
+            padding: 30px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+        }
+        .article-panel h2 {
+            font-size: 26px;
+            color: #0a4d8c;
+            margin-bottom: 20px;
+            border-left: 5px solid #1a6fb5;
+            padding-left: 16px;
+        }
+        .article-item {
+            padding: 16px 0;
+            border-bottom: 1px dashed #e0e6ed;
+        }
+        .article-item:last-child {
+            border-bottom: none;
+        }
+        .article-item h4 {
+            font-size: 18px;
+            margin-bottom: 6px;
+            color: #2c3e50;
+        }
+        .article-item h4 a {
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        .article-item h4 a:hover {
+            color: #1a6fb5;
+        }
+        .article-meta {
+            font-size: 13px;
+            color: #95a5a6;
+        }
+        .side-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .side-box {
+            background: #fff;
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+        }
+        .side-box h3 {
+            font-size: 20px;
+            color: #0a4d8c;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        .side-list {
+            list-style: none;
+        }
+        .side-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 15px;
+        }
+        .side-list li:last-child {
+            border-bottom: none;
+        }
+        .side-list li::before {
+            content: "●";
+            color: #1a6fb5;
+            margin-right: 10px;
+            font-size: 10px;
+            vertical-align: middle;
+        }
+        /* 数据统计 */
+        .stats {
+            background: #0a4d8c;
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+        }
+        .stat-item {
+            padding: 20px;
+        }
+        .stat-num {
+            font-size: 42px;
+            font-weight: 700;
+            color: #ffd166;
+        }
+        .stat-label {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-top: 6px;
+        }
+        /* FAQ */
+        .faq-section {
+            padding: 60px 0;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+        }
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0a4d8c;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .faq-question::before {
+            content: "Q";
+            background: #1a6fb5;
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            margin-right: 14px;
+            flex-shrink: 0;
+        }
+        .faq-answer {
+            color: #555;
+            padding-left: 42px;
+            font-size: 15px;
+        }
+        /* 页脚 */
+        .footer {
+            background: #1a2530;
+            color: #aab6c2;
+            padding: 50px 0 20px;
+            margin-top: 40px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer h4 {
+            color: #fff;
+            margin-bottom: 16px;
+            font-size: 18px;
+        }
+        .footer ul {
+            list-style: none;
+        }
+        .footer ul li {
+            padding: 5px 0;
+            font-size: 14px;
+        }
+        .footer a {
+            color: #aab6c2;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #fff;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid #2a3642;
+            font-size: 14px;
+        }
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+            }
+            .hero {
+                padding: 60px 0;
+            }
+            .hero h1 {
+                font-size: 34px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .section-title {
+                font-size: 28px;
+            }
+            .content-grid {
+                gap: 20px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .btn-hero {
+                padding: 12px 28px;
+                font-size: 16px;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+    <!-- 页眉导航 -->
+    <header class="header">
+        <div class="container header-inner">
+            <div class="logo">🌊 青岛小琴</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">美食探店</a></li>
+                    <li><a href="#">旅游攻略</a></li>
+                    <li><a href="#">城市文化</a></li>
+                    <li><a href="#">本地故事</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主视觉区域 -->
+    <section class="hero">
+        <div class="container">
+            <h1>青岛小琴</h1>
+            <p>带你深入青岛的大街小巷，品味红瓦绿树间的美食与故事，发现这座海滨城市的独特魅力。</p>
+            <a href="#explore" class="btn-hero">开始探索青岛</a>
+        </div>
+    </section>
+
+    <!-- 特色板块 -->
+    <section class="features" id="explore">
+        <div class="container">
+            <h2 class="section-title">发现青岛的每一面</h2>
+            <p class="section-sub">从舌尖到脚尖，从历史到今天，青岛小琴为你精心呈现</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🍤</div>
+                    <h3>地道美食</h3>
+                    <p>从劈柴院的小吃到海边的渔家宴，带你品尝最正宗的青岛味道，挖掘深巷中的宝藏店铺。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏖️</div>
+                    <h3>海滨风光</h3>
+                    <p>八大关的异国建筑、栈桥的海鸥、金沙滩的细浪，青岛的美景不容错过，这里有一手攻略。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏺</div>
+                    <h3>城市记忆</h3>
+                    <p>从德式老建筑到里院文化，讲述青岛百年来的城市变迁与人文故事，触摸历史的温度。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎉</div>
+                    <h3>本地活动</h3>
+                    <p>啤酒节、帆船赛、艺术展……青岛全年精彩不断，我们为你整理最新最全的活动资讯。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 内容卡片区 -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">热门内容推荐</h2>
+            <p class="section-sub">编辑精选 · 每篇都是用心之作</p>
+            <div class="content-grid">
+                <article class="content-card">
+                    <div class="card-img orange">🥟</div>
+                    <div class="card-body">
+                        <h3>青岛锅贴：藏在街角的老味道</h3>
+                        <p>底部金黄酥脆，内馅鲜嫩多汁，青岛锅贴承载着几代人的味觉记忆。走访三家老店，寻味最正宗的制作工艺。</p>
+                        <span class="tag">美食</span>
+                        <span class="tag">老字号</span>
+                    </div>
+                </article>
+                <article class="content-card">
+                    <div class="card-img green">⛵</div>
+                    <div class="card-body">
+                        <h3>奥帆中心：从奥运到日常</h3>
+                        <p>2008年奥运会帆船比赛的举办地，如今已成为市民休闲和游客打卡的热门景点。夜晚的灯光秀更是美不胜收。</p>
+                        <span class="tag">景点</span>
+                        <span class="tag">休闲</span>
+                    </div>
+                </article>
+                <article class="content-card">
+                    <div class="card-img purple">🏛️</div>
+                    <div class="card-body">
+                        <h3>八大关：万国建筑博览会</h3>
+                        <p>十条幽静马路两旁，分布着俄、英、法、德等20多个国家的建筑风格。漫步其中，仿佛穿越时空。</p>
+                        <span class="tag">建筑</span>
+                        <span class="tag">历史</span>
+                    </div>
+                </article>
+                <article class="content-card">
+                    <div class="card-img red">🍻</div>
+                    <div class="card-body">
+                        <h3>青岛啤酒：一座城与一杯酒</h3>
+                        <p>青岛啤酒不仅是一种饮品，更是这座城市的名片。了解百年青啤的历史，以及本地人"哈啤酒"的正确打开方式。</p>
+                        <span class="tag">文化</span>
+                        <span class="tag">品牌</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 双栏布局：文章列表+侧边栏 -->
+    <div class="container two-col">
+        <div class="article-panel">
+            <h2>最新发布</h2>
+            <div class="article-item">
+                <h4><a href="#">青岛小琴探店记：大学路网红墙周边的小众咖啡馆</a></h4>
+                <div class="article-meta">2025-02-18 · 阅读 1.2万</div>
+            </div>
+            <div class="article-item">
+                <h4><a href="#">冬日青岛怎么玩？温泉、滑雪与海鸥观赏指南</a></h4>
+                <div class="article-meta">2025-02-10 · 阅读 8560</div>
+            </div>
+            <div class="article-item">
+                <h4><a href="#">青岛老里院改造记：留住城市的烟火气</a></h4>
+                <div class="article-meta">2025-01-28 · 阅读 1.5万</div>
+            </div>
+            <div class="article-item">
+                <h4><a href="#">海鲜市场选购攻略：本地人教你避坑</a></h4>
+                <div class="article-meta">2025-01-15 · 阅读 2.1万</div>
+            </div>
+            <div class="article-item">
+                <h4><a href="#">青岛地铁沿线景点全收集（附出口信息）</a></h4>
+                <div class="article-meta">2024-12-30 · 阅读 1.8万</div>
+            </div>
+            <div class="article-item">
+                <h4><a href="#">小鱼山公园：俯瞰老城的最佳机位</a></h4>
+                <div class="article-meta">2024-12-18 · 阅读 7800</div>
+            </div>
+        </div>
+        <aside class="side-panel">
+            <div class="side-box">
+                <h3>热门标签</h3>
+                <div>
+                    <span class="tag">#海鲜</span>
+                    <span class="tag">#啤酒屋</span>
+                    <span class="tag">#看海</span>
+                    <span class="tag">#老建筑</span>
+                    <span class="tag">#赶海</span>
+                    <span class="tag">#摄影</span>
+                    <span class="tag">#亲子游</span>
+                    <span class="tag">#citywalk</span>
+                </div>
+            </div>
+            <div class="side-box">
+                <h3>城市快讯</h3>
+                <ul class="side-list">
+                    <li>青岛地铁15号线最新进展</li>
+                    <li>中山路历史文化街区改造完成</li>
+                    <li>第34届青岛国际啤酒节时间公布</li>
+                    <li>胶州湾第二隧道预计2027年通车</li>
+                    <li>浮山森林公园绿道全线贯通</li>
+                </ul>
+            </div>
+            <div class="side-box">
+                <h3>关于小琴</h3>
+                <p style="font-size: 14px; color: #555;">土生土长的青岛姑娘，热爱记录这座城市的美好。用镜头和文字，分享最真实的青岛生活体验。</p>
+            </div>
+        </aside>
+    </div>
+
+    <!-- 数据统计 -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-num">300+</div>
+                    <div class="stat-label">原创文章</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">50+</div>
+                    <div class="stat-label">深度探店</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">20w+</div>
+                    <div class="stat-label">累计阅读</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">5年</div>
+                    <div class="stat-label">专注本地内容</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ部分 -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">关于青岛，你可能想问</h2>
+            <p class="section-sub">常见问题解答</p>
+            <div class="faq-item">
+                <div class="faq-question">什么季节去青岛旅游最合适？</div>
+                <div class="faq-answer">青岛四季各有特色。5-10月是最佳旅游季节，气候宜人，可以下海游泳。7-8月是啤酒节期间，气氛热烈但游客较多。如果想避开人流，5月和9月是不错的选择。冬季虽然较冷，但可以看海鸥，体验不同的海滨风情。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">青岛有哪些必吃的美食？</div>
+                <div class="faq-answer">除了知名的青岛啤酒和海鲜，还推荐辣炒蛤蜊、鲅鱼水饺、流亭猪蹄、海菜凉粉、青岛锅贴等特色美食。建议去台东步行街、劈柴院或本地人常去的云霄路美食街品尝。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">第一次来青岛，哪些景点不容错过？</div>
+                <div class="faq-answer">经典线路包括：栈桥-天主教堂-中山路-大学路-小鱼山-八大关-五四广场-奥帆中心。时间充裕的话，还可以去崂山、金沙滩、极地海洋公园等地。建议至少安排3天时间。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">在青岛出行方便吗？</div>
+                <div class="faq-answer">青岛市区公共交通发达，地铁目前已开通多条线路，可覆盖大部分主要景点。公交车线路密集，打车和网约车也很方便。老城区道路较窄，自驾可能会遇到停车难的问题，建议公交或步行游览。</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>青岛小琴</h4>
+                    <p style="font-size: 14px;">一个热爱青岛的本地姑娘，记录城市的美好与温度。</p>
+                </div>
+                <div>
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">美食探店</a></li>
+                        <li><a href="#">旅游攻略</a></li>
+                        <li><a href="#">城市文化</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>合作伙伴</h4>
+                    <ul>
+                        <li><a href="#">青岛文旅局</a></li>
+                        <li><a href="#">本地商家联盟</a></li>
+                        <li><a href="#">摄影爱好者社区</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>📧 qingdaoxiaoqin@example.com</li>
+                        <li>📍 中国·山东·青岛</li>
+                        <li>📱 微信公众号：青岛小琴</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 青岛小琴 · 保留所有权利 · 鲁ICP备2025XXXXXX号
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

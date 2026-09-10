@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不知火舞3沙滩全集h-角色剧情与场景深度解析专题</title>
+    <meta name="description" content="不知火舞3沙滩全集h专题页面，提供不知火舞角色背景、沙滩场景设定、剧情走向分析、经典对战回顾与相关游戏资料整理，帮助玩家与爱好者深入了解这一经典格斗角色的特别篇章。">
+    <meta name="keywords" content="不知火舞3,沙滩全集,不知火舞,格斗游戏,剧情分析,角色解析,场景设定">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif;
+            background: #f4f0e8;
+            color: #2b2b2b;
+            line-height: 1.7;
+        }
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fffdf8;
+            box-shadow: 0 0 30px rgba(0,0,0,0.08);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        /* 页眉 */
+        .site-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid #e94560;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            font-size: 28px;
+            color: #f5c518;
+        }
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .logo-text span {
+            color: #f5c518;
+        }
+        .header-nav {
+            display: flex;
+            gap: 24px;
+        }
+        .header-nav a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+        .header-nav a:hover {
+            color: #f5c518;
+            border-bottom-color: #f5c518;
+        }
+        /* 移动端导航 */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: 1px solid #aaa;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        /* 首屏 Hero */
+        .hero-section {
+            background: linear-gradient(145deg, #2d1b1b 0%, #3b2b2b 60%, #4a3a3a 100%);
+            padding: 50px 40px 60px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,180,80,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-section::after {
+            content: "";
+            position: absolute;
+            bottom: -30%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(233,69,96,0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(245,197,24,0.2);
+            border: 1px solid #f5c518;
+            color: #f5c518;
+            padding: 4px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .hero-content h1 {
+            font-size: 42px;
+            color: #fff;
+            font-weight: 800;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            line-height: 1.3;
+        }
+        .hero-content h1 .highlight {
+            color: #f5c518;
+        }
+        .hero-desc {
+            font-size: 17px;
+            color: #ddd;
+            max-width: 700px;
+            margin: 0 auto 28px;
+            line-height: 1.8;
+        }
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #bbb;
+        }
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        /* 主体内容 */
+        .main-content {
+            flex: 1;
+            padding: 40px 30px;
+        }
+        /* 章节标题 */
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+        .section-title::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background: #e94560;
+            border-radius: 2px;
+        }
+        .section-subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+        /* 角色介绍卡 */
+        .char-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+        .char-card {
+            background: #faf6ef;
+            border-radius: 12px;
+            padding: 24px;
+            border-left: 4px solid #e94560;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .char-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+        }
+        .char-card h3 {
+            font-size: 18px;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+        .char-card .tag {
+            display: inline-block;
+            background: #e94560;
+            color: #fff;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+        .char-card p {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.7;
+        }
+        /* 场景与剧情区块 */
+        .story-block {
+            background: #faf6ef;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 30px;
+        }
+        .story-block h3 {
+            font-size: 20px;
+            color: #1a1a2e;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .story-block p {
+            margin-bottom: 14px;
+            color: #3a3a3a;
+            font-size: 15px;
+        }
+        .story-block ul {
+            margin-left: 20px;
+            margin-bottom: 14px;
+        }
+        .story-block li {
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        /* 经典对战回顾 */
+        .match-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .match-item {
+            background: #fff;
+            border: 1px solid #e5e0d5;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+        .match-item:hover {
+            border-color: #e94560;
+        }
+        .match-item .vs {
+            font-size: 20px;
+            font-weight: 800;
+            color: #e94560;
+            margin-bottom: 8px;
+        }
+        .match-item h4 {
+            font-size: 16px;
+            margin-bottom: 6px;
+            color: #1a1a2e;
+        }
+        .match-item p {
+            font-size: 13px;
+            color: #666;
+        }
+        /* 资料列表 */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .info-card {
+            background: #faf6ef;
+            border-radius: 10px;
+            padding: 22px;
+            border-top: 3px solid #f5c518;
+        }
+        .info-card h3 {
+            font-size: 17px;
+            margin-bottom: 10px;
+            color: #1a1a2e;
+        }
+        .info-card p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        /* FAQ */
+        .faq-section {
+            background: #faf6ef;
+            border-radius: 12px;
+            padding: 28px;
+            margin-top: 20px;
+        }
+        .faq-item {
+            border-bottom: 1px solid #e0d8cc;
+            padding: 16px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            font-weight: 600;
+            font-size: 16px;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .faq-question::before {
+            content: "Q";
+            background: #e94560;
+            color: #fff;
+            font-size: 13px;
+            width: 22px;
+            height: 22px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .faq-answer {
+            font-size: 15px;
+            color: #444;
+            padding-left: 30px;
+            line-height: 1.8;
+        }
+        .faq-answer::before {
+            content: "A";
+            background: #f5c518;
+            color: #1a1a2e;
+            font-size: 13px;
+            width: 22px;
+            height: 22px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: 700;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        /* 注意事项 */
+        .notice-box {
+            background: #fff8e6;
+            border: 1px solid #f0d78c;
+            border-radius: 8px;
+            padding: 18px 22px;
+            margin: 30px 0 20px;
+            font-size: 14px;
+            color: #6b5a1e;
+            line-height: 1.8;
+        }
+        .notice-box strong {
+            color: #8a6d1a;
+        }
+        /* 页脚 */
+        .site-footer {
+            background: #1a1a2e;
+            color: #aaa;
+            padding: 30px 30px 20px;
+            text-align: center;
+            border-top: 3px solid #e94560;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .footer-links a:hover {
+            color: #f5c518;
+        }
+        .footer-copy {
+            font-size: 13px;
+            color: #888;
+        }
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 16px 20px;
+            }
+            .header-nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            .header-nav.active {
+                display: flex;
+            }
+            .mobile-nav-toggle {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            .hero-section {
+                padding: 40px 20px 50px;
+            }
+            .hero-content h1 {
+                font-size: 30px;
+            }
+            .main-content {
+                padding: 30px 20px;
+            }
+            .section-title {
+                font-size: 22px;
+            }
+            .story-block {
+                padding: 20px;
+            }
+            .faq-section {
+                padding: 20px;
+            }
+            .faq-answer {
+                padding-left: 0;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-desc {
+                font-size: 15px;
+            }
+            .hero-meta {
+                gap: 14px;
+                flex-direction: column;
+                align-items: center;
+            }
+            .char-grid {
+                grid-template-columns: 1fr;
+            }
+            .match-grid {
+                grid-template-columns: 1fr;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<div class="page-wrapper">
+    <!-- 页眉 -->
+    <header class="site-header">
+        <div class="logo-area">
+            <span class="logo-icon">🔥</span>
+            <div class="logo-text">格斗<span>档案馆</span></div>
+        </div>
+        <button class="mobile-nav-toggle" onclick="document.querySelector('.header-nav').classList.toggle('active')">☰ 菜单</button>
+        <nav class="header-nav">
+            <a href="#">首页</a>
+            <a href="#">角色</a>
+            <a href="#">剧情解析</a>
+            <a href="#">对战研究</a>
+            <a href="#">资料库</a>
+            <a href="#">讨论区</a>
+        </nav>
+    </header>
+
+    <!-- 首屏 Hero -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge">特别篇 · 场景深度解析</div>
+            <h1>不知火舞3 <span class="highlight">沙滩全集</span> 剧情与场景研究</h1>
+            <p class="hero-desc">
+                围绕不知火舞系列第三部中以沙滩为舞台的完整剧集内容，从角色心理、场景设计到剧情脉络进行全方位整理与解读，帮助玩家理解这一特别篇章的背景与细节。
+            </p>
+            <div class="hero-meta">
+                <span>📅 内容整理：2025年</span>
+                <span>🏷️ 标签：不知火舞 / 沙滩 / 剧情解析</span>
+                <span>👥 阅读对象：玩家与系列爱好者</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主体 -->
+    <main class="main-content">
+        <!-- 角色背景 -->
+        <section>
+            <h2 class="section-title">角色背景与篇章定位</h2>
+            <p class="section-subtitle">了解不知火舞在这个特别篇章中的状态与定位</p>
+            <div class="char-grid">
+                <div class="char-card">
+                    <span class="tag">主角</span>
+                    <h3>不知火舞</h3>
+                    <p>不知火流忍术传承者，以华丽的扇子术与火焰招式闻名。在本篇章中，她因一次委托来到海滨地区，意外卷入了一场围绕古老卷轴展开的争夺。</p>
+                </div>
+                <div class="char-card">
+                    <span class="tag">对手</span>
+                    <h3>神秘忍者集团</h3>
+                    <p>一个活跃于南方岛屿的忍者组织，试图利用沙滩地形的特殊阵法困住外来者，他们的目的与不知火流秘传的"焰之舞"有关。</p>
+                </div>
+                <div class="char-card">
+                    <span class="tag">关键人物</span>
+                    <h3>海滨旅店老板娘</h3>
+                    <p>表面上是经营旅店的普通女性，实际上掌握着关于潮汐与古代祭坛的秘密，为不知火舞提供了重要的情报支援。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 沙滩场景设定 -->
+        <section style="margin-top: 40px;">
+            <h2 class="section-title">沙滩场景设定与视觉表现</h2>
+            <div class="story-block">
+                <h3>🏖️ 场景构成</h3>
+                <p>这一篇章的场景设计以热带海滩为核心，包含三个主要的战斗区域：清晨的礁石海岸、午后的椰林沙滩、以及黄昏时分的古代祭坛遗迹。每个区域根据时间变化呈现出不同的光影效果，其中祭坛遗迹在满月之夜会触发特殊的机关。</p>
+                <p>沙滩场景不仅提供了视觉上的清爽感，更影响了角色的移动与招式判定——松软的沙地会减缓冲刺速度，而湿滑的礁石区域则会让部分技能产生弹射效果。这种场景互动设计在系列中较为少见，为对战增加了额外的策略维度。</p>
+                <h3 style="margin-top: 18px;">🌊 场景中的互动元素</h3>
+                <ul>
+                    <li><strong>海浪冲击</strong>：每隔一段时间，巨大的海浪会从画面边缘涌来，覆盖部分场地，此时火焰类招式的伤害会降低，但水属性攻击会增强。</li>
+                    <li><strong>椰树与遮阳伞</strong>：可作为掩体阻挡部分飞行道具，同时也能被攻击破坏，破坏后会掉落回复道具。</li>
+                    <li><strong>古代符文石</strong>：散布在祭坛周围的石头，靠近时会触发小范围的火焰增益效果，但同一时间只能激活一个。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 剧情走向分析 -->
+        <section>
+            <h2 class="section-title">剧情走向与关键节点</h2>
+            <div class="story-block">
+                <h3>📜 篇章结构</h3>
+                <p>整体剧情分为三个章节，分别对应游戏中的三个时间段。第一章节"潮汐之约"中，不知火舞受委托寻找失落的"火灵珠"，在沙滩上与当地忍者初次交锋。第二章节"沙影迷踪"揭示了神秘集团的真实目的——他们企图利用祭坛在月圆之夜吸收不知火舞的火焰能量。最终章节"焰舞归潮"中，不知火舞在祭坛核心区域与首领展开决战，并借助潮汐的力量逆转了局势。</p>
+                <h3 style="margin-top: 18px;">🔍 关键剧情细节</h3>
+                <ul>
+                    <li><strong>卷轴中的线索</strong>：游戏中的收集要素——散落在沙滩各处的古代卷轴碎片，拼合后可看到关于祭坛历史的完整记载，解释了为何只有不知火流传人才能激活祭坛。</li>
+                    <li><strong>老板娘的真实身份</strong>：在剧情后期会揭示她其实是百年前守护祭坛一族的后裔，一直默默监视着入侵者。</li>
+                    <li><strong>隐藏结局条件</strong>：在不破坏任何场景椰树且击败所有忍者的情况下通关最终章，可以触发与老板娘的特殊对话场景，为后续剧情埋下伏笔。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 经典对战回顾 -->
+        <section>
+            <h2 class="section-title">经典对战回顾</h2>
+            <p class="section-subtitle">沙滩场景中的几个代表性战斗节点</p>
+            <div class="match-grid">
+                <div class="match-item">
+                    <div class="vs">VS 01</div>
+                    <h4>礁石海岸遭遇战</h4>
+                    <p>开场教学战，对手为两名普通忍者，主要引导玩家熟悉沙滩地形的移动特点。</p>
+                </div>
+                <div class="match-item">
+                    <div class="vs">VS 02</div>
+                    <h4>椰林双人战</h4>
+                    <p>同时面对两名持刀忍者，可利用椰树阻挡敌人的投掷攻击，是中期较有难度的一战。</p>
+                </div>
+                <div class="match-item">
+                    <div class="vs">VS 03</div>
+                    <h4>祭坛守护者</h4>
+                    <p>最终首领战的前哨，守护者使用水属性攻击，与不知火舞的火焰形成鲜明对抗。</p>
+                </div>
+                <div class="match-item">
+                    <div class="vs">VS FINAL</div>
+                    <h4>首领·沙岚</h4>
+                    <p>最终战，场景会随着战斗阶段变化日落与月升，首领在低血量时会使用全屏沙暴，需要借助海浪时机反击。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 资料整理 -->
+        <section>
+            <h2 class="section-title">相关资料整理</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🎮 游戏信息</h3>
+                    <p>所属系列：不知火舞外传篇</p>
+                    <p>篇章编号：第3部·沙滩篇</p>
+                    <p>主要平台：街机 / 家用机移植版</p>
+                </div>
+                <div class="info-card">
+                    <h3>🃏 招式特点</h3>
+                    <p>新增沙滩专用技"潮汐扇舞"，可在水面区域触发额外效果。</p>
+                    <p>原有招式"花蝶扇"在沙地上会留下短暂的火痕，造成持续伤害。</p>
+                </div>
+                <div class="info-card">
+                    <h3>📦 收集要素</h3>
+                    <p>贝壳护符（共12个）：提升防御力</p>
+                    <p>古代卷轴碎片（共9片）：解锁背景故事</p>
+                    <p>隐藏照片：在特定场景使用特定动作触发</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 注意事项 -->
+        <div class="notice-box">
+            <strong>内容说明：</strong> 本页面基于游戏系列中与"沙滩"相关的篇章内容进行整理与解读。部分描述为基于公开资料的分析与推测，具体设定以游戏实际版本为准。我们尊重版权，页面不提供任何游戏资源下载或盗版内容链接。
+        </div>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <h2 class="section-title" style="font-size: 22px;">关于本篇章的常见问题</h2>
+            <div class="faq-item">
+                <div class="faq-question">这个篇章是独立游戏还是DLC内容？</div>
+                <div class="faq-answer">根据系列惯例，"不知火舞3"通常指代系列第三部作品，而"沙滩全集"是指该作品内以沙滩为舞台的完整章节合集。具体形式可能因版本而异，部分为独立发售的加强版，部分为追加下载内容。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">沙滩场景在系列中有什么特殊意义？</div>
+                <div class="faq-answer">沙滩场景在不知火舞系列中往往代表着"休整"与"转折"。角色在经历紧张的都市战斗后，在海边篇章中会展现出更多个人性格侧面，同时也为后续剧情的升级提供铺垫。本篇章的祭坛设定更是将场景与角色背景深度绑定。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何解锁隐藏的剧情对话？</div>
+                <div class="faq-answer">根据玩家反馈与攻略信息，需要在最终章之前完成所有收集要素，并且在椰林双人战中不破坏场景中的任何一棵椰子树，这样在祭坛决战结束后，老板娘会出现在码头区域，触发一段特殊的回忆对话。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">这个篇章是否适合新手玩家？</div>
+                <div class="faq-answer">篇章的前半部分难度较为平缓，适合作为系列入门。但最终首领战对玩家的防御时机和场景利用能力有一定要求，建议新手先熟悉沙滩地形中的移动差异，并多利用场景中的回复道具。</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">内容合作</a>
+            <a href="#">版权声明</a>
+            <a href="#">用户协议</a>
+            <a href="#">联系管理员</a>
+        </div>
+        <div class="footer-copy">
+            © 2025 格斗档案馆 · 本页面为爱好者资料整理，与任何官方组织无关
+        </div>
+    </footer>
+</div>
+</body>
+</html>
